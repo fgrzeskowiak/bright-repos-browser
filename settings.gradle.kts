@@ -8,4 +8,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "bright-repos-browser"
 
-include(":app")
+include(
+    ":app",
+    ":core:network"
+)

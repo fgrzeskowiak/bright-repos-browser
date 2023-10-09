@@ -1,4 +1,6 @@
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
+import com.android.build.gradle.internal.scope.ProjectInfo.Companion.getBaseName
+import com.filippo.repos.BASE_NAMESPACE
 import com.filippo.repos.setupComposeBuildFeatures
 import com.filippo.repos.setupDefaultConfig
 import com.filippo.repos.setupJvm
@@ -8,6 +10,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -19,6 +22,7 @@ android {
     setupVersion()
     setupBuildTypes()
     setupComposeBuildFeatures()
+    namespace = BASE_NAMESPACE
 }
 
 fun BaseAppModuleExtension.setupVersion() {

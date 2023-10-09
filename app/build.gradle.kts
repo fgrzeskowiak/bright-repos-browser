@@ -2,10 +2,6 @@ plugins {
     id("android-app-plugin")
 }
 
-android {
-    namespace = "com.filippo.repos"
-}
-
 dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.androidx.core)

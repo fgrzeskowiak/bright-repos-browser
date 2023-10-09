@@ -1,11 +1,11 @@
 package com.filippo.repos
 
-import com.android.build.api.variant.ApplicationAndroidComponentsExtension
+import com.android.build.api.dsl.LibraryDefaultConfig
+import com.android.build.api.variant.BuildConfigField
+import com.android.build.api.variant.LibraryVariant
 import com.android.build.gradle.BaseExtension
 import org.gradle.api.JavaVersion
-import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
-import org.gradle.kotlin.dsl.configure
 
 fun BaseExtension.setupJvm() {
     compileOptions {
@@ -36,5 +36,19 @@ fun BaseExtension.setupComposeBuildFeatures() {
     composeOptions.kotlinCompilerExtensionVersion = "1.4.1"
 }
 
+fun BaseExtension.enableBuildConfig() {
+    buildFeatures.buildConfig = true
+}
+
+fun LibraryDefaultConfig.createBuildConfigSecret(name: String, key: String) {
+    buildConfigField(
+        SECRET_TYPE,
+        name,
+        SecretsUtil.getStringSecret(key)
+    )
+}
+
 private const val TARGET_SDK = 33
 private const val MIN_SDK = 24
+private const val SECRET_TYPE = "String"
+const val BASE_NAMESPACE = "com.filippo.repos"
