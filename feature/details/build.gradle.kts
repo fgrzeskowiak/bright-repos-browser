@@ -17,4 +17,6 @@ dependencies {
     implementation(libs.kotlinx.serialization)
     implementation(libs.arrow)
     implementation(libs.bundles.compose)
+
+    testImplementation(libs.bundles.tests)
 }

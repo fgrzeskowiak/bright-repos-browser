@@ -18,12 +18,11 @@ internal class CommitsDataSourceImpl @Inject constructor(
         repositoryOwner: String,
         repositoryName: String,
     ): ApiResponse<List<Commit>> = either {
-        val jointRepositoryName = "$repositoryOwner/$repositoryName"
-        val localCommits = dao.getCommits(jointRepositoryName).toDomain()
+        val localCommits = dao.getCommits(repositoryName).toDomain()
 
         localCommits.takeIf { it.isNotEmpty() }
             ?: getCommitsFromRemote(repositoryOwner, repositoryName)
-                .onRight { dao.insertAll(it.toEntity(jointRepositoryName)) }
+                .onRight { dao.insertAll(it.toEntity(repositoryName)) }
                 .bind()
     }
 

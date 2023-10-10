@@ -29,6 +29,6 @@ internal class RepositoryDataSourceImpl @Inject constructor(
         owner: String,
         name: String,
     ): ApiResponse<Repository> = apiCall {
-        api.getRepository(name, owner).toDomain()
+        api.getRepository(owner = owner, name = name).toDomain()
     }
 }

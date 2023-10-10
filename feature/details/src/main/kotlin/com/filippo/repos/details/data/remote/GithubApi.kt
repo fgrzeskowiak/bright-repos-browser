@@ -17,7 +17,7 @@ internal interface GithubApi {
 
     @GET("repos/{owner}/{repo}")
     suspend fun getRepository(
-        @Path("repo") repoName: String,
-        @Path("owner") repoOwner: String,
+        @Path("owner") owner: String,
+        @Path("repo") name: String,
     ): RepositoryResponse
 }

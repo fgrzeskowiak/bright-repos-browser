@@ -49,11 +49,13 @@ arrow = { module = "io.arrow-kt:arrow-core", version = "1.2.0" }
 # Testing
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 mockk = { module = "io.mockk:mockk", version = "1.13.8" }
-
+junit = { module = "junit:junit", version = "4.13.2" }
+kotest = { module = "io.kotest:kotest-assertions-core", version = "5.7.2" }
+kotest-arrow = { module = "io.kotest.extensions:kotest-assertions-arrow", version = "1.4.0" }
 
 [bundles]
 network = ["okhttp", "okhttp-loggingInterceptor", "retrofit", "retrofit-serializer", "kotlinx-serialization"]
 coroutines = ["coroutines", "coroutines-android"]
 compose = ["compose-ui", "compose-preview", "compose-material3", "compose-navigation", "compose-hilt"]
 room = ["room-runtime", "room-ktx"]
-tests = ["coroutines-test", "mockk"]
+tests = ["coroutines-test", "mockk", "junit", "kotest", "kotest-arrow"]
