@@ -1,6 +1,6 @@
 package com.filippo.repos.details.domain.model
 
-data class Repo(
+data class RepositoryWithCommits(
     val id: RepositoryId,
     val commits: List<Commit>,
 )

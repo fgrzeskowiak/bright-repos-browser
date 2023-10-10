@@ -28,7 +28,8 @@ hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 hilt-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
 
-room = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
 
@@ -54,4 +55,5 @@ mockk = { module = "io.mockk:mockk", version = "1.13.8" }
 network = ["okhttp", "okhttp-loggingInterceptor", "retrofit", "retrofit-serializer", "kotlinx-serialization"]
 coroutines = ["coroutines", "coroutines-android"]
 compose = ["compose-ui", "compose-preview", "compose-material3", "compose-navigation", "compose-hilt"]
+room = ["room-runtime", "room-ktx"]
 tests = ["coroutines-test", "mockk"]

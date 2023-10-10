@@ -1,10 +1,10 @@
 package com.filippo.repos.details.presentation
 
 import arrow.core.Either
-import com.filippo.repos.details.domain.model.Repo
+import com.filippo.repos.details.domain.model.RepositoryWithCommits
 import com.filippo.repos.network.RequestError
 
-internal fun Either<RequestError, Repo>.toViewState(): RepoDetailsState = fold(
+internal fun Either<RequestError, RepositoryWithCommits>.toViewState(): RepoDetailsState = fold(
     ifLeft = { RepoDetailsState(errorMessage = it.toString()) },
     ifRight = { repo ->
         RepoDetailsState(
