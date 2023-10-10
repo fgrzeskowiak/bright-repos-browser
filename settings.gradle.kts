@@ -12,5 +12,6 @@ include(
     ":app",
     ":core:database",
     ":core:network",
-    ":feature:details"
+    ":feature:details",
+    ":feature:search",
 )

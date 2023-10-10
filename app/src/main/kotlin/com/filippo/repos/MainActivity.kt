@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.filippo.repos.details.presentation.RepoDetailsScreen
+import com.filippo.repos.search.presentation.SearchScreen
 import com.filippo.repos.theme.BrightReposBrowserTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
             BrightReposBrowserTheme {
                 NavHost(navController = navController, startDestination = "details") {
                     composable("details") {
-                        RepoDetailsScreen()
+                        SearchScreen()
                     }
                 }
             }

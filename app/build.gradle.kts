@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     implementation(project(":feature:details"))
+    implementation(project(":feature:search"))
 
     implementation(platform(libs.compose.bom))
     implementation(libs.androidx.core)

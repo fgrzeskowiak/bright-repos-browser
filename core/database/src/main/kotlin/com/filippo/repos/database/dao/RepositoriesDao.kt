@@ -14,4 +14,7 @@ interface RepositoriesDao {
 
     @Query("SELECT * FROM ${RepositoryTableConstants.TABLE_NAME} WHERE ${RepositoryTableConstants.OWNER} LIKE :owner AND ${RepositoryTableConstants.NAME} LIKE :name")
     suspend fun getRepository(owner: String, name: String): RepositoryEntity?
+
+    @Query("SELECT * FROM ${RepositoryTableConstants.TABLE_NAME}")
+    suspend fun getAllRepositories(): List<RepositoryEntity>
 }
