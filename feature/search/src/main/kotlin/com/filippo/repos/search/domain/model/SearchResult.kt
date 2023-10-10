@@ -1,6 +1,6 @@
 package com.filippo.repos.search.domain.model
 
-data class SearchResult(
+internal data class SearchResult(
     val repositoryOwner: String,
     val repositoryName: String,
 )

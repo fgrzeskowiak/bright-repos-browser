@@ -19,9 +19,3 @@ internal class SearchInputValidator @Inject constructor() {
 }
 
 private const val DELIMITER = '/'
-
-internal sealed interface ValidationError {
-    object WrongFormat : ValidationError
-    object EmptyOwner : ValidationError
-    object EmptyName : ValidationError
-}

@@ -1,6 +1,8 @@
 package com.filippo.repos.search.presentation
 
-data class SearchState(
+import com.filippo.repos.common.TextResource
+
+internal data class SearchState(
     val recentSearches: List<String> = emptyList(),
-    val error: String? = null,
+    val error: TextResource? = null,
 )

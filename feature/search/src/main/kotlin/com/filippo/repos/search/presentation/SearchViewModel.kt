@@ -48,17 +48,17 @@ class SearchViewModel @Inject internal constructor(
             .launchIn(viewModelScope)
     }
 
-    val state: StateFlow<SearchState> = combine(
+    internal val state: StateFlow<SearchState> = combine(
         validationFlow.onStart { emit(Pair("", "").right()) },
         recentSearchesFlow
     ) { validation, recentSearches ->
-        SearchState(
-            recentSearches = recentSearches.map { "${it.repositoryOwner}/${it.repositoryName}" },
-            error = validation.leftOrNull()?.toString()
+        createSearchState(
+            validationError = validation.leftOrNull(),
+            recentSearches = recentSearches
         )
     }.stateIn(viewModelScope, SharingStarted.Lazily, SearchState())
 
-    fun submit(input: String) {
+    internal fun search(input: String) {
         viewModelScope.launch {
             searchInput.emit(input)
         }

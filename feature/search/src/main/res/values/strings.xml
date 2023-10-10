@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="search_button">Search</string>
+  <string name="search_repos">Search for Github Repository</string>
+  <string name="recent_searches">Recent searches:</string>
+  <string name="search_hint">owner/repo</string>
+  <string name="wrong_format">Wrong input format. Must be: owner/repo</string>
+  <string name="empty_owner">Owner name cannot be empty</string>
+  <string name="empty_repo">Repository name cannot be empty</string>
+</resources>
