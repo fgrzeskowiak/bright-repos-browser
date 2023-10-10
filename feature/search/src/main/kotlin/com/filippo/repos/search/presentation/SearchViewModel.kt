@@ -3,6 +3,7 @@ package com.filippo.repos.search.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import arrow.core.right
+import com.filippo.repos.navigation.domain.Navigator
 import com.filippo.repos.search.domain.RecentSearchesDataSource
 import com.filippo.repos.search.domain.SearchInputValidator
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -24,6 +25,7 @@ import kotlinx.coroutines.launch
 
 @HiltViewModel
 class SearchViewModel @Inject internal constructor(
+    private val navigator: Navigator,
     inputValidator: SearchInputValidator,
     recentSearchesDataSource: RecentSearchesDataSource,
 ) : ViewModel() {
@@ -40,7 +42,9 @@ class SearchViewModel @Inject internal constructor(
         validationFlow
             .map { it.getOrNull() }
             .filterNotNull()
-            .onEach { println("Navgiate to $it") }
+            .onEach { (repositoryOwner, repositoryName) ->
+                navigator.openDetails(repositoryOwner, repositoryName)
+            }
             .launchIn(viewModelScope)
     }
 

@@ -6,6 +6,7 @@ plugins {
 dependencies {
     implementation(project(":core:database"))
     implementation(project(":core:network"))
+    implementation(project(":core:navigation"))
 
     implementation(platform(libs.compose.bom))
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

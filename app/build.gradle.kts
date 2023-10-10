@@ -3,6 +3,7 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":core:navigation"))
     implementation(project(":feature:details"))
     implementation(project(":feature:search"))
 

@@ -11,6 +11,7 @@ rootProject.name = "bright-repos-browser"
 include(
     ":app",
     ":core:database",
+    ":core:navigation",
     ":core:network",
     ":feature:details",
     ":feature:search",
