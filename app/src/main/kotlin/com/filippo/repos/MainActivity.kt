@@ -1,5 +1,6 @@
 package com.filippo.repos
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -35,10 +36,20 @@ class MainActivity : ComponentActivity() {
         LaunchedEffect(Unit) {
             navigator.navigationCommands.collectLatest { command ->
                 when (command) {
-                    is NavigationCommand.Destination -> navController.navigate(command.route)
                     NavigationCommand.NavigateUp -> navController.navigateUp()
+                    is NavigationCommand.Destination -> navController.navigate(command.route)
+                    is NavigationCommand.ShareOutside -> createSharingIntent(command.message)
                 }
             }
         }
+    }
+
+    private fun createSharingIntent(message: String) {
+        val shareIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, message)
+            type = "text/plain"
+        }
+        startActivity(Intent.createChooser(shareIntent, null))
     }
 }

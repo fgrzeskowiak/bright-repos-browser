@@ -23,4 +23,8 @@ internal class NavigatorImpl @Inject constructor() : Navigator {
     override fun navigateUp() {
         navigationCommands.tryEmit(NavigationCommand.NavigateUp)
     }
+
+    override fun shareMessageToOtherApps(message: String) {
+        navigationCommands.tryEmit(NavigationCommand.ShareOutside(message))
+    }
 }

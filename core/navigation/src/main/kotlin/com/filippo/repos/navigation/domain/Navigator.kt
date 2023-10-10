@@ -6,4 +6,5 @@ interface Navigator {
     val navigationCommands: SharedFlow<NavigationCommand>
     fun openDetails(repositoryOwner: String, repositoryName: String)
     fun navigateUp()
+    fun shareMessageToOtherApps(message: String)
 }
