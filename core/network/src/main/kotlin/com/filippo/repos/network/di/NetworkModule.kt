@@ -1,6 +1,7 @@
-package com.filippo.repos.network
+package com.filippo.repos.network.di
 
 import android.content.Context
+import com.filippo.repos.network.BuildConfig
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides

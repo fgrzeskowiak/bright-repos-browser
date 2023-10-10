@@ -16,5 +16,6 @@ dependencies {
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)
 
+    implementation(libs.arrow)
     implementation(libs.bundles.network)
 }

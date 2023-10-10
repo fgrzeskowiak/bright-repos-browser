@@ -3,6 +3,8 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":feature:details"))
+
     implementation(platform(libs.compose.bom))
     implementation(libs.androidx.core)
     implementation(libs.androidx.activity.compose)
