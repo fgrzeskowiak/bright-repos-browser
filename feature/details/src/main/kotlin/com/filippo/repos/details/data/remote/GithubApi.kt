@@ -11,7 +11,6 @@ internal interface GithubApi {
     suspend fun getCommits(
         @Path("owner") owner: String,
         @Path("repo") repoName: String,
-        @Query("per_page") perPage: Int = 10,
         @Query("page") page: Int = 1,
     ): List<CommitResponse>
 
