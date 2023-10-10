@@ -1,5 +1,6 @@
 package com.filippo.repos.details.data
 
+import com.filippo.repos.common.RequestError
 import com.filippo.repos.database.dao.RepositoriesDao
 import com.filippo.repos.details.data.remote.GithubApi
 import com.filippo.repos.details.repository
@@ -7,7 +8,6 @@ import com.filippo.repos.details.repositoryEntity
 import com.filippo.repos.details.repositoryName
 import com.filippo.repos.details.repositoryOwner
 import com.filippo.repos.details.repositoryResponse
-import com.filippo.repos.network.RequestError
 import io.kotest.assertions.arrow.core.shouldBeLeft
 import io.kotest.assertions.arrow.core.shouldBeRight
 import io.mockk.called
@@ -62,7 +62,7 @@ class RepositoryDataSourceTest {
         val result = dataSource.getRepository(repositoryOwner, repositoryName)
 
         // then
-        result shouldBeLeft RequestError.Unknown
+        result shouldBeLeft RequestError.NotFound
     }
 
     @Test

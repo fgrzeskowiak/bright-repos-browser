@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     implementation(platform(libs.compose.bom))
+    implementation(project(":core:common"))
     implementation(project(":core:database"))
     implementation(project(":core:navigation"))
 

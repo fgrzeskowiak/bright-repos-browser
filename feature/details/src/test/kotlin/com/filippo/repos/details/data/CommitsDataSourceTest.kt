@@ -1,5 +1,6 @@
 package com.filippo.repos.details.data
 
+import com.filippo.repos.common.RequestError
 import com.filippo.repos.database.dao.CommitsDao
 import com.filippo.repos.details.commits
 import com.filippo.repos.details.commitsEntity
@@ -7,7 +8,6 @@ import com.filippo.repos.details.commitsResponse
 import com.filippo.repos.details.data.remote.GithubApi
 import com.filippo.repos.details.repositoryName
 import com.filippo.repos.details.repositoryOwner
-import com.filippo.repos.network.RequestError
 import io.kotest.assertions.arrow.core.shouldBeLeft
 import io.kotest.assertions.arrow.core.shouldBeRight
 import io.mockk.called
@@ -62,7 +62,7 @@ class CommitsDataSourceTest {
         val result = dataSource.getCommits(repositoryOwner, repositoryName)
 
         // then
-        result shouldBeLeft RequestError.Unknown
+        result shouldBeLeft RequestError.NotFound
     }
 
     @Test

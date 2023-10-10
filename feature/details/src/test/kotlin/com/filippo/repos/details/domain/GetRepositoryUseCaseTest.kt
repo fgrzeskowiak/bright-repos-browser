@@ -2,10 +2,10 @@ package com.filippo.repos.details.domain
 
 import arrow.core.left
 import arrow.core.right
+import com.filippo.repos.common.RequestError
 import com.filippo.repos.details.commits
 import com.filippo.repos.details.repository
 import com.filippo.repos.details.repositoryWithCommits
-import com.filippo.repos.network.RequestError
 import io.kotest.assertions.arrow.core.shouldBeLeft
 import io.kotest.assertions.arrow.core.shouldBeRight
 import io.mockk.coEvery
@@ -28,7 +28,7 @@ class GetRepositoryUseCaseTest {
         // given
         coEvery {
             repositoryDataSource.getRepository(repositoryOwner, repositoryName)
-        } returns RequestError.Unknown.left()
+        } returns RequestError.NotFound.left()
 
         coEvery {
             commitsDataSource.getCommits(repositoryOwner, repositoryName)
@@ -38,7 +38,7 @@ class GetRepositoryUseCaseTest {
         val result = useCase(repositoryOwner, repositoryName)
 
         // then
-        result shouldBeLeft RequestError.Unknown
+        result shouldBeLeft RequestError.NotFound
     }
 
     @Test
@@ -50,13 +50,13 @@ class GetRepositoryUseCaseTest {
 
         coEvery {
             commitsDataSource.getCommits(repositoryOwner, repositoryName)
-        } returns RequestError.Unknown.left()
+        } returns RequestError.NotFound.left()
 
         // when
         val result = useCase(repositoryOwner, repositoryName)
 
         // then
-        result shouldBeLeft RequestError.Unknown
+        result shouldBeLeft RequestError.NotFound
     }
 
     @Test

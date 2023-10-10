@@ -1,6 +1,7 @@
 package com.filippo.repos.network
 
 import arrow.core.Either
+import com.filippo.repos.common.RequestError
 
 typealias ApiResponse<Response> = Either<RequestError, Response>
 

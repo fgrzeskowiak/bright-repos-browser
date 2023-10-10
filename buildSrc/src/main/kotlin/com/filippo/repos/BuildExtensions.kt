@@ -19,7 +19,8 @@ fun KotlinJvmOptions.setupKotlin() {
     freeCompilerArgs = freeCompilerArgs + listOf(
         "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
         "-Xopt-in=kotlinx.coroutines.FlowPreview",
-        "-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi"
+        "-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi",
+        "-Xopt-in=androidx.compose.material3.ExperimentalMaterial3Api",
     )
 }
 

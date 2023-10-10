@@ -2,8 +2,8 @@ package com.filippo.repos.details.domain
 
 import arrow.core.Either
 import arrow.core.raise.either
+import com.filippo.repos.common.RequestError
 import com.filippo.repos.details.domain.model.RepositoryWithCommits
-import com.filippo.repos.network.RequestError
 import javax.inject.Inject
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope

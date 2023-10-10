@@ -12,6 +12,7 @@ include(
     ":app",
     ":core:database",
     ":core:navigation",
+    ":core:common",
     ":core:network",
     ":feature:details",
     ":feature:search",
