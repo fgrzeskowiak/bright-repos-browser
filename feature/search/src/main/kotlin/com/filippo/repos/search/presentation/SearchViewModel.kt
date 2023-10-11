@@ -56,7 +56,7 @@ class SearchViewModel @Inject internal constructor(
             validationError = validation.leftOrNull(),
             recentSearches = recentSearches
         )
-    }.stateIn(viewModelScope, SharingStarted.Lazily, SearchState())
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), SearchState())
 
     internal fun search(input: String) {
         viewModelScope.launch {

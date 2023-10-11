@@ -67,8 +67,6 @@ Some future enhancements might include:
 - Adding pull to refresh mechanism to the Repository Details screen. Current implementation always
   gets the data from the database if it's not empty. There should be an option for the user to
   refresh the data.
-- Recent Searches list is not automatically updated after going back from Repository Details screen
-  there should be a refresh trigger during `OnStart` event
 - Some more test scenarios should be created, especially for ViewModels. Current implementation
   tests only the happy path and navigation.
 - UI look should be enhanced. Current implementation serves the required functionality, but is not
