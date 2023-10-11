@@ -8,15 +8,14 @@ The App consists of 2 screens:
 - Repository Details screen - displays the searched repository name, id and commit history. It also
   allows selecting commits by clicking on them. The selected commits can be then shared with some
   3rd party apps in a formatted message.
-  The App supports Light and Dark themes, based on system settings.
+
+The App supports Light and Dark themes, based on system settings.
 
 <p>
-<img width="200" alt="" src="https://github.com/fgrzeskowiak/bright-repos-browser/assets/17904175/0b5052c8-a535-4463-986a-2462611ee963">
-<img width="200" alt="" src="https://github.com/fgrzeskowiak/bright-repos-browser/assets/17904175/c96dd923-c409-4861-bdd5-317c760e802f">
-</p>
-<p>
-<img width="200" alt="" src="https://github.com/fgrzeskowiak/bright-repos-browser/assets/17904175/22e7a5ba-e407-47a0-95c2-3f81de0a771d">
-<img width="200" alt="" src="https://github.com/fgrzeskowiak/bright-repos-browser/assets/17904175/df659ab6-7653-4103-9bed-b97bb13199aa">
+<img width="180" alt="" src="https://github.com/fgrzeskowiak/bright-repos-browser/assets/17904175/0b5052c8-a535-4463-986a-2462611ee963">
+<img width="180" alt="" src="https://github.com/fgrzeskowiak/bright-repos-browser/assets/17904175/c96dd923-c409-4861-bdd5-317c760e802f">
+<img width="180" alt="" src="https://github.com/fgrzeskowiak/bright-repos-browser/assets/17904175/22e7a5ba-e407-47a0-95c2-3f81de0a771d">
+<img width="180" alt="" src="https://github.com/fgrzeskowiak/bright-repos-browser/assets/17904175/df659ab6-7653-4103-9bed-b97bb13199aa">
 </p>
 
 ## Required setup
