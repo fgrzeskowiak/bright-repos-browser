@@ -56,13 +56,16 @@ class RepositoryDataSourceTest {
     @Test
     fun `should return request error when getRepository() fails`() = runTest {
         // given
-        coEvery { api.getRepository(repositoryOwner, repositoryName) } throws RuntimeException()
+        val errorMessage = "error"
+        coEvery { api.getRepository(repositoryOwner, repositoryName) } throws RuntimeException(
+            errorMessage
+        )
 
         // when
         val result = dataSource.getRepository(repositoryOwner, repositoryName)
 
         // then
-        result shouldBeLeft RequestError.NotFound
+        result shouldBeLeft RequestError.Unknown(errorMessage)
     }
 
     @Test

@@ -56,13 +56,16 @@ class CommitsDataSourceTest {
     @Test
     fun `should return request error when getRepository() fails`() = runTest {
         // given
-        coEvery { api.getCommits(repositoryOwner, repositoryName) } throws RuntimeException()
+        val errorMessage = "error"
+        coEvery { api.getCommits(repositoryOwner, repositoryName) } throws RuntimeException(
+            errorMessage
+        )
 
         // when
         val result = dataSource.getCommits(repositoryOwner, repositoryName)
 
         // then
-        result shouldBeLeft RequestError.NotFound
+        result shouldBeLeft RequestError.Unknown(errorMessage)
     }
 
     @Test
