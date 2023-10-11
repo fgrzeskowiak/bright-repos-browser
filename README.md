@@ -34,8 +34,8 @@ Compiling the project might also require a Java 17 as a Gradle JDK.
 In order to keep the readability and separation of concern inside the codebase, it was split into
 separate modules, grouped into 2 sections: `core` and `feature`.
 
-Modules inside `core` provide functionalities used by `feature` modules: `network`, `database`
-and `common` classes.
+Modules inside `core` provide functionalities used by `feature` modules: `network`, `database`,
+`navigation` and `common` classes.
 
 Modules inside `feature` represent the 2 aforementioned screens: `search` and `details`.
 
@@ -68,7 +68,7 @@ Some future enhancements might include:
   gets the data from the database if it's not empty. There should be an option for the user to
   refresh the data.
 - Recent Searches list is not automatically updated after going back from Repository Details screen
-  - there should be a refresh trigger during `OnStart` event
+  there should be a refresh trigger during `OnStart` event
 - Some more test scenarios should be created, especially for ViewModels. Current implementation
   tests only the happy path and navigation.
 - UI look should be enhanced. Current implementation serves the required functionality, but is not
@@ -76,3 +76,6 @@ Some future enhancements might include:
 - Previews should be added to screen files. Current implementation doesn't include them as they did
   not work automatically after adding the required dependency and the time limit did not allow for
   further investigation of the root cause.
+- Navigation builder should probably be implemented better, so that the screen Composables, their
+  routes and arguments are not public, but internal. The feature module should only expose a method
+  to build its navigation graph
